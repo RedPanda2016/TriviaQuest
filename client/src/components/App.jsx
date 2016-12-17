@@ -70,7 +70,7 @@ class App extends React.Component {
   componentWillMount() {
     // See https://davidwalsh.name/react-authentication
     this.createLock();
-    // **Variables beginning with _ are meant ot be used as references only. Do not mutate them.**
+    // **Variables beginning with _ are meant to be used as references only. Do not mutate them.**
     var _grid = this.state.grid;
     // Connect the roguelike-game to window so App can access it.
     window.gameAppConnector = new GameAppConnector(this);

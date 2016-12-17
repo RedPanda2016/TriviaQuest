@@ -43,6 +43,7 @@ window.currentAvatarUrl;
          */
         id: null,
 
+
         /**
         * The type of entity this is.
         * When created this object is merged with the value of Entity.Types[type].

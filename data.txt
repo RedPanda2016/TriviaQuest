@@ -1,4 +1,4 @@
-[{
+  [{
   "type": "trivia",
   "prompt": "Given array, [2, 8, 3, 2, 6, 7], what is the value at index two?",
   "answer": "3",

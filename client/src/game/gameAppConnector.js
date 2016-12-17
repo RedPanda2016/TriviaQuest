@@ -1,4 +1,4 @@
-class GameAppConnector {
+  class GameAppConnector {
   ////////////////
   // INITIALIZE //
   ////////////////

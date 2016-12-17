@@ -4,13 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Trivia Quest!</title>
-  <!-- Electorlize font -->
-  <link href="https://fonts.googleapis.com/css?family=Electrolize" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link href="//fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <script src="//localhost:35729/livereload.js"></script>
   <link rel="stylesheet" href="styles/style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/threejs/r76/three.min.js"></script>
+  <script src="../node_modules/jquery/dist/jquery.js"></script>
   <script src="../node_modules/lodash/lodash.js"></script>
   <script src="../node_modules/lodash/lodash.js"></script>
   <script src="src/rot.js/rot.js"></script>
@@ -38,16 +36,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 </head>
 <body>
-<img class="arcade" src="./img/arcademachine.png">
-<canvas id="scene" class="swords"></canvas>
+
 <div id="main"></div>
 <div id="roguelike-console-container"></div>
 <!-- hidden div that has the ASCII version of the game in it -->
 <div style="display: none" id="roguelike-map-container"></div>
-
   <script src="src/game/game.js"></script>
   <script src="src/game/gameAppConnector.js"></script>
   <script src="./dist/bundle.js"></script>
-  <script src="./styles/swords.js"></script>
 </body>
 </html>
