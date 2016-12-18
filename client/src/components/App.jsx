@@ -12,6 +12,7 @@ import PlayerStatus from './PlayerStatus.jsx';
 import GameOver from './GameOver.jsx';
 import RaisedButton from 'material-ui/RaisedButton';
 import UserProfile from './UserProfile.jsx';
+import BGMusicPlayer from './BackgroundMusic.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -298,7 +299,7 @@ class App extends React.Component {
           <Textfield state={this.state} checkAnswer={this.checkAnswer.bind(this)}/>
           <img id="draggable" class="ui-widget-content" src="../../img/bitcoin.png" className={this.state.showPlayerProfile ? 'hidden' : ''}></img>
           <GameOver actions={this.actions} health={_health}/>
-
+          <BGMusicPlayer />
         </div>
       </div>
     );
