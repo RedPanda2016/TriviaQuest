@@ -44,10 +44,6 @@ class App extends React.Component {
       freePlay: false,
       // changes state to allow free play without signup
       showPlayerProfile: false,
-      audio: {
-        bgMusic: true,
-        soundFX: true
-      }
     };
 
     this.options = {
@@ -270,15 +266,6 @@ class App extends React.Component {
     });
   }
 
-  bgMusicPlayPause() {
-    this.setState(!this.state.audio.bgMusic);
-  }
-
-  soundFXOnOff() {
-    this.setState(!this.state.audio.soundFX);
-  }
-
-
   render() {
     // **Variables beginning with _ are meant ot be used as references only. Do not mutate them.**
     var _grid = this.state.grid;
@@ -312,7 +299,7 @@ class App extends React.Component {
           <Textfield state={this.state} checkAnswer={this.checkAnswer.bind(this)}/>
           <img id="draggable" class="ui-widget-content" src="../../img/bitcoin.png" className={this.state.showPlayerProfile ? 'hidden' : ''}></img>
           <GameOver actions={this.actions} health={_health}/>
-          <BGMusicPlayer bgMusicPlayPause={this.state.audio.bgMusic} />
+          <BGMusicPlayer />
         </div>
       </div>
     );
