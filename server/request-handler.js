@@ -2,7 +2,7 @@
 var Promise = require('bluebird');
 var Challenge = Promise.promisifyAll(require('./models/challenge'));
 var TestResult = require('./models/testResult');
-var UserProfile = require('./models/UserProfile');
+var UserProfile = require('./models/userProfile');
 
 // Gets all challenges from the database
 exports.getChallenges = function(request, response) {

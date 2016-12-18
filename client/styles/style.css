@@ -4,6 +4,7 @@
 }
 body {
   font-family: 'Electrolize', sans-serif;
+  background-color:black;
 }
 
 h1{
@@ -59,9 +60,10 @@ a:hover{
   top: 0%;
   left: 0%;
 }
+
 .game-display{
-  width: 500px;
-  height:auto;
+  height:500px;
+  width:500px;
   margin-left: auto;
   margin-right:auto;
   margin-top:10px;
@@ -69,9 +71,6 @@ a:hover{
 
 #grid{
   display: flex;
-  /*height: 100vh;*/
-  /*align-items:center;     /*align row center (or column if flexdir is other)*/
-  /*align-items: flex-start will stop row from stretching to fill and give them default height n move to top*/
   justify-content:center; /*align column center*/
   flex-direction:row;  /*default is row*/
   flex-wrap:wrap; /*items will wrap to next line*/
@@ -145,8 +144,8 @@ a:hover{
 .arcade {
   z-index: 5;
   opacity:0.7;
-  height:950px;
-  width:auto;
+  height:100vh;
+  width:95vh;
   position: absolute;
   margin-left: auto;
   margin-right:auto;
@@ -155,15 +154,15 @@ a:hover{
   right:0;
 }
 
-.jukebox {
-  z-index: 5;
+#jukebox {
+  z-index: 4;
   opacity:0.7;
-  height:300px;
+  height:30vh;
   width:auto;
   position: absolute;
   margin-left:100px;
   margin-right:auto;
-  margin-top:100px
+  margin-top:130px
 }
 
 #draggable {

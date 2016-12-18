@@ -33,11 +33,7 @@
   <script src="src/js-roguelike-skeleton/src/lighting-rot.js"></script>
   <script src="src/js-roguelike-skeleton/src/object-manager.js"></script>
   <script src="src/js-roguelike-skeleton/src/game.js"></script>
-  <script>
-      $( function() {
-          $( "#draggable" ).draggable({ revert: true }).css({'top': 35, 'left' : 20});
-      } );
-  </script>
+  <script src="./ui.js"></script>
    <!-- Auth0Lock script -->
   <script src="//cdn.auth0.com/js/lock-9.0.min.js"></script>
   <!-- Setting the right viewport -->
@@ -45,7 +41,7 @@
 </head>
 <body>
 <img class="arcade" src="./img/arcademachine.png">
-<img class="jukebox" src="./img/jukebox.png">
+<img id="jukebox" src="./img/jukebox.png">
 <canvas id="scene" class="swords"></canvas>
 <div id="main"></div>
 <div id="roguelike-console-container"></div>
