@@ -3,15 +3,20 @@ import ReactHowler from 'react-howler'
 
 
 export default class BGMusicPlayer extends React.Component {
+
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
 
-      playing:true
+      playing:false
+
     }
 
-    this.onClick = this.handleClick.bind(this);
+  }
+
+  componentDidMount() {
+    $('body').bind('drop', this.handleClick.bind(this))
   }
 
   playNext() {
@@ -31,7 +36,7 @@ export default class BGMusicPlayer extends React.Component {
     };
 
     return musicArray;
-  };
+  }
 
   randomIndex(arr) {
     return Math.floor(Math.random() * arr.length)
@@ -74,7 +79,6 @@ export default class BGMusicPlayer extends React.Component {
 
     return (
       <div>
-        <button onClick={this.onClick}>PlayPause</button>
         {this.state.playing ? <ReactHowler src={randSong()} playing={this.state.playing} onEnd={this.onClick} volume={.1} /> : null}
       </div>
     )

@@ -294,7 +294,6 @@ class App extends React.Component {
         <div className= "game-display">
           <PlayerStatus health={_health} id="heart-display" />
           <Grid grid={_grid} state={this.state} />
-            
           <Gameinfo id="gameinfo" gameInfoText={gameInfoText}/>
           <Textfield state={this.state} checkAnswer={this.checkAnswer.bind(this)}/>
           <img id="draggable" class="ui-widget-content" src="../../img/bitcoin.png" className={this.state.showPlayerProfile ? 'hidden' : ''}></img>
