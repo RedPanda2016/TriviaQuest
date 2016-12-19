@@ -192,7 +192,7 @@
             color: '#444',
             bgColor: '#222',
             passable: true,
-            blocksLos: false
+            blocksLos: false,
         },
         wall: {
             name: 'Wall',
@@ -211,6 +211,9 @@
             blocksLos: true,
             bump: function(entity){
                 if(!this.passable){
+                    if(soundFXOnOff) {
+                      doorOpen.play('doorOpen');
+                    };
                     this.passable = true;
                     this.blocksLos = false;
                     this.char = "'";

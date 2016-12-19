@@ -222,6 +222,9 @@ window.currentAvatarUrl;
             bgColor: false,
             playerLastSeen: false,
             bump: function(player, slime) {
+                if(soundFXOnOff) {
+                  slimeFX.play('attack');
+                };
                 var app = window.gameAppConnector.app;
                 app.setState({
                     currentEnemy: slime
@@ -371,6 +374,7 @@ window.currentAvatarUrl;
             color: 'red',
             bgColor: false,
             bump: function(player, owl) {
+
                 var app = window.gameAppConnector.app;
                 app.setState({
                     currentEnemy: owl
@@ -521,6 +525,9 @@ window.currentAvatarUrl;
             color: 'red',
             bgColor: false,
             bump: function(player, bird) {
+                if(soundFXOnOff) {
+                  snakeFX.play('attack');
+                };
                 var app = window.gameAppConnector.app;
                 app.setState({
                     currentEnemy: bird
@@ -668,7 +675,8 @@ window.currentAvatarUrl;
             char: 'n',
             color: 'black',
             bgColor: false,
-            bump: function() {
+            bump: function(event) {
+                walkingFX.play('walking1');
                 document.querySelector('body').style.backgroundColor = '#222';
                 document.querySelector('.player').style.backgroundImage = 'url("../../../img/ninja.png"), url("../../../img/tile-by-Ivan-voirol.png")';
             }
@@ -699,6 +707,9 @@ window.currentAvatarUrl;
             color: 'yellow',
             bgColor: false,
             bump: function() {
+                if(soundFXOnOff) {
+                  pikachuFX.play('swapCostume');
+                };
                 document.querySelector('body').style.backgroundColor = '#F7F9FD';
                 document.querySelector('.player').style.backgroundImage = 'url("../../../img/pika.png"), url("../../../img/tile-by-Ivan-voirol.png")';
             }

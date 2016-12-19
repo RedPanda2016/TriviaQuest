@@ -142,6 +142,7 @@
             },
             attachTo: function(entity){
                 this.game.console.log(logPickUpHealing(entity, this));
+                heart.play('heart');
                 entity.incrementPlayerHealth(this.healAmount);
 
                 // After use, remove the item from the tile

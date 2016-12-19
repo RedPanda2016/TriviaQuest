@@ -210,6 +210,7 @@
         */
         move: function(x, y){
             if(this.canMoveTo(x, y)){
+                walkThisWay();
                 this.moveTo(x, y);
 
                 // item occuping target tile (if any)

@@ -8,7 +8,7 @@ export default class BGMusicPlayer extends React.Component {
 
     this.state = {
 
-      playing:true
+      playing:false
     }
 
     this.onClick = this.handleClick.bind(this);
