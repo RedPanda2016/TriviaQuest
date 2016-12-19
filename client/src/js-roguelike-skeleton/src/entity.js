@@ -698,8 +698,9 @@ window.currentAvatarUrl;
             char: 'u',
             color: 'yellow',
             bgColor: false,
-            bump: function() {
+            bump: function(event) {
                 document.querySelector('body').style.backgroundColor = '#F7F9FD';
+                console.log(event, this)
                 document.querySelector('.player').style.backgroundImage = 'url("../../../img/pika.png"), url("../../../img/tile-by-Ivan-voirol.png")';
             }
         }
