@@ -295,14 +295,14 @@
                         ];
                     }
                     if(targetTile.type === 'exitDoorLevel3') {
-                        game.itemGenerator(mapDataLevel3, 2);
-                        game.enemyGenerator(mapDataLevel3, 21);
+                        game.itemGenerator(mapDataLevel4, 2);
+                        game.enemyGenerator(mapDataLevel4, 21);
 
                         game.player.x = 1;
                         game.player.y = 2;
-                        game.map.loadTilesFromArrayString(mapDataLevel3, mapCharToType, 'grass');
-                        game.itemManager.loadFromArrayString(mapDataLevel3, itemCharToType);
-                        game.entityManager.loadFromArrayString(mapDataLevel3, entityCharToType, null, null, game.player);
+                        game.map.loadTilesFromArrayString(mapDataLevel4, mapCharToType, 'grass');
+                        game.itemManager.loadFromArrayString(mapDataLevel4, itemCharToType);
+                        game.entityManager.loadFromArrayString(mapDataLevel4, entityCharToType, null, null, game.player);
 
                         game.setMapSize(game.map.width, game.map.height);
                         game.renderer.resize(10, 10);
