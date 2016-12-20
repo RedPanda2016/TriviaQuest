@@ -11,15 +11,16 @@
     this.challenges = {
       bird: [],
       owl: [],
-      slime: []
+      slime: [],
+      random: []
     };
     this.challengeTypes = {
       // Git
-      git: 'owl',
+      politics: 'owl',
       // Git prep trivia
-      gitPrep: 'bird',
+      baseball: 'bird',
       // Random trivia
-      trivia: 'slime'
+      movies: 'slime'
     };
 
     // Get challenges from the server and update this.challenges
@@ -38,52 +39,80 @@
 
   // Gets challenges from the server and sets them on the object
   getChallenges(callback) {
-    $.get('/api/challenges')
-      .done(function(challenges) {
-        // Save the challenges
-        challenges.forEach(function (challenge) {
-          var character = this.challengeTypes[challenge.type];
-          if (this.challenges[character] == undefined) {
-            this.challenges[character] = [];
-          }
-          this.challenges[character].push(challenge);
-        }.bind(this));
-        callback();
-      }.bind(this))
-      .fail(function(error) {
-        console.log('Error');
-      });
+    // $.get('/api/challenges')
+    //   .done(function(challenges) {
+    //     // Save the challenges
+    //     challenges.forEach(function (challenge) {
+    //       var character = this.challengeTypes[challenge.type];
+    //       if (this.challenges[character] == undefined) {
+    //         this.challenges[character] = [];
+    //       }
+    //       this.challenges[character].push(challenge);
+    //     }.bind(this));
+    //     callback();
+    //   }.bind(this))
+    //   .fail(function(error) {
+    //     console.log('Error');
+    //   });
+    $.ajax({
+      url: "http://jservice.io/api/clues",
+      method: "GET"
+    })
+    .done(function(data) {
+      data.forEach(function (challenge) {
+        // var character = this.challengeTypes[challenge.category.title];
+        // if (this.challenges[character] == undefined) {
+        //   this.challenges[character] = [];
+        // }
+        // this.challenges[character].push(challenge);
+        var random = this.challenges['random'];
+        if (random == undefined) {
+          random = [];
+        }
+        if(challenge.question) {
+          random.push(challenge);
+        }
+      }.bind(this));
+      callback();
+    }.bind(this))
+    .fail(function(error) {
+      console.log(error);
+    });
   }
 
   // Assigns challenges to enemies.
   assignChallenges() {
-    console.log(this.challenges);
+    // var entities = this.game.entityManager.objects;
+    // var challenge;
+    // entities.forEach(function(entity) {
+    //   if (entity.type === 'slime') { // Assign challenges to slimes
+    //     // Pluck off a challenge
+    //      challenge = this.challenges.slime.pop();
+    //   } else if (entity.type === 'bird') {
+    //      challenge = this.challenges.bird.pop();
+    //   }
+    //   // Assign it to the entity.
+    //   entity.challenge = challenge;
+    // }.bind(this));
     var entities = this.game.entityManager.objects;
     var challenge;
     entities.forEach(function(entity) {
-      if (entity.type === 'slime') { // Assign challenges to slimes
-        // Pluck off a challenge
-         challenge = this.challenges.slime.pop();
-      } else if (entity.type === 'bird') {
-         challenge = this.challenges.bird.pop();
-      }
-      // Assign it to the entity.
+      challenge = this.challenges['random'].pop();
       entity.challenge = challenge;
     }.bind(this));
-
   }
 
   // Run this when we have the profile nickname.
-  assignGitChallenges() {
-    var entities = this.game.entityManager.objects;
-    entities.forEach(function(entity) {
-      if (entity.type === 'owl') {
-        // Set all owls to the same challenge for now.
-       // @todo: allow for multiple git challenges
-        this.setGitChallenge(entity, 0, this.challenges.owl[0].prompt);
-      }
-    }.bind(this));
-  }
+  // assignGitChallenges() {
+  //   var entities = this.game.entityManager.objects;
+  //   entities.forEach(function(entity) {
+  //     if (entity.type === 'owl') {
+  //       // Set all owls to the same challenge for now.
+  //      // @todo: allow for multiple git challenges
+  //       this.setGitChallenge(entity, 0, this.challenges.owl[0].prompt);
+  //     }
+  //   }.bind(this));
+  // }
 
   // Assigns Git challenges to enemies.
   setGitChallenge(entity, gitChallengeId, gitChallengeText) {
