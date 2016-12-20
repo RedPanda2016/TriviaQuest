@@ -33,20 +33,7 @@
   <script src="src/js-roguelike-skeleton/src/lighting-rot.js"></script>
   <script src="src/js-roguelike-skeleton/src/object-manager.js"></script>
   <script src="src/js-roguelike-skeleton/src/game.js"></script>
-  <script>
-    
-    $( function() {
-    $( "#draggable" ).draggable().css({'height':60, 'width':80, 'top': 45, 'left' : 20});
-    $( "#jukebox" ).droppable({
-        drop: function() {
-            $("#draggable").css({'height':80, 'width':80}).hide("drop", {direction: "down"}, "slow", function(){
-                $(this).css({'height':60, 'width':80, 'top': 45, 'left' : 20}).fadeIn()
-            });
-        }
-    })
-
-} );
-  </script>
+  <script src="./ui.js"></script>
    <!-- Auth0Lock script -->
   <script src="//cdn.auth0.com/js/lock-9.0.min.js"></script>
   <!-- Setting the right viewport -->
